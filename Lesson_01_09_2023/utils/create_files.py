@@ -7,7 +7,15 @@ def create_folders(folders: tuple) -> None:
 
 
 def create_src(path_with_name: str) -> None:
-    pass
+    with open(path_with_name, "w") as file:
+        file.write(
+            "def solution() -> None:\n\t"
+            "pass\n\n\n"
+            "def main(*args, **kwargs) -> None:\n\t"
+            "return solution()\n\n\n"
+            "if __name__ == \"__main__\":\n\t"
+            "print(main())\n"
+        )
 
 
 def create_tests(path: str, name: str) -> None:
