@@ -1,8 +1,8 @@
-def solution() -> None:
-	pass
+def solution() -> str:
+	return "12" * 12 + "У"
 
 
-def main(*args, **kwargs) -> None:
+def main(*args, **kwargs) -> str:
 	return solution()
 
 
