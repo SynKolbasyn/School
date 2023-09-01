@@ -1,9 +1,16 @@
 import os
+import logging
+
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(message)s")
 
 
 def create_folders(folders: tuple) -> None:
+    logging.info("Start creating folders...")
     for folder in folders:
         os.mkdir(folder)
+        logging.info(f"Folder \"{folder}\" has been created")
+    logging.info("Folders created")
 
 
 def create_src(path_with_name: str) -> None:
@@ -16,6 +23,7 @@ def create_src(path_with_name: str) -> None:
             "if __name__ == \"__main__\":\n\t"
             "print(main())\n"
         )
+    logging.info(f"Src \"{path_with_name}\" has been created")
 
 
 def create_tests(path: str, name: str) -> None:
@@ -31,13 +39,16 @@ def create_tests(path: str, name: str) -> None:
             "if __name__ == \"__main__\":\n\t"
             "unittest.main()\n"
         )
+    logging.info(f"Test \"{path + name}\" has been created")
 
 
-def main() -> None:
+def main():
     create_folders(("../src/", "../tests/"))
+    logging.info("Start creating src and tests...")
     for number in range(1, 26):
         create_src(f"../src/Task_{number}.py")
         create_tests("../tests/", f"test_Task_{number}.py")
+    logging.info("Src and tests have been created")
 
 
 if __name__ == "__main__":
