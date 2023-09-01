@@ -19,7 +19,18 @@ def create_src(path_with_name: str) -> None:
 
 
 def create_tests(path: str, name: str) -> None:
-    pass
+    with open(path + name, "w") as file:
+        file.write(
+            "import unittest\n"
+            f"import src.{name[5:-3]}\n\n\n"
+            f"class {name[5:-3].replace('_', '')}TestCase(unittest.TestCase):\n\t"
+            "def test_solution(self):\n\t\t"
+            f"self.assertEqual(src.{name[5:-3]}.solution(), None)\n\n\t"
+            "def test_main(self):\n\t\t"
+            f"self.assertEqual(src.{name[5:-3]}.main(), None)\n\n\n"
+            "if __name__ == \"__main__\":\n\t"
+            "unittest.main()\n"
+        )
 
 
 def main() -> None:
