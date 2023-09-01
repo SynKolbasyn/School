@@ -1,5 +1,9 @@
+import os
+
+
 def create_folders(folders: tuple) -> None:
-    pass
+    for folder in folders:
+        os.mkdir(folder)
 
 
 def create_src(path_with_name: str) -> None:
