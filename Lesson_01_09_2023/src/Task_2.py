@@ -5,8 +5,8 @@ def solution(s: int, v1: int, v2: int) -> float:
 def main(*args: str, **kwargs: str) -> float:
 	if not kwargs:
 		if len(args) == 1:
-			return solution(*tuple(map(int, args[0].split())))
-		return solution(*tuple(map(int, args)))
+			return solution(*map(int, args[0].split()))
+		return solution(*map(int, args))
 	return solution(s=int(kwargs["s"]), v1=int(kwargs["v1"]), v2=int(kwargs["v2"]))
 
 
