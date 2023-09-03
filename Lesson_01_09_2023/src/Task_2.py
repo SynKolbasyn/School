@@ -2,7 +2,7 @@ def solution(s: int, v1: int, v2: int) -> float:
 	return int(s / (v2 - v1))
 
 
-def main(*args, **kwargs) -> float:
+def main(*args: str, **kwargs: str) -> float:
 	if not kwargs:
 		if len(args) == 1:
 			return solution(*tuple(map(int, args[0].split())))

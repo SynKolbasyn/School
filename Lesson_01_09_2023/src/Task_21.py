@@ -2,7 +2,7 @@ def solution() -> None:
 	pass
 
 
-def main(*args, **kwargs) -> None:
+def main(*args: str, **kwargs: str) -> None:
 	return solution()
 
 
