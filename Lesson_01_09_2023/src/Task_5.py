@@ -8,9 +8,9 @@ def solution(n: int) -> str:
 
 
 def main(*args: str, **kwargs: str) -> str:
-	if not kwargs:
-		return solution(int(args[0]))
-	return solution(int(kwargs["n"]))
+	if kwargs:
+		return solution(int(kwargs["n"]))
+	return solution(int(args[0]))
 
 
 if __name__ == "__main__":

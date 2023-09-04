@@ -8,16 +8,16 @@ def solution(a: int, b: int, c: int, n: int) -> tuple[float, float, float]:
 
 
 def main(*args: str, **kwargs: str) -> str:
-	if not kwargs:
-		if len(args) == 1:
-			return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(*map(int, args[0].split())))
-		return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(*map(int, args)))
-	return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(
-		a=int(kwargs["a"]),
-		b=int(kwargs["b"]),
-		c=int(kwargs["c"]),
-		n=int(kwargs["n"])
-	))
+	if kwargs:
+		return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(
+			a=int(kwargs["a"]),
+			b=int(kwargs["b"]),
+			c=int(kwargs["c"]),
+			n=int(kwargs["n"])
+		))
+	if len(args) == 1:
+		return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(*map(int, args[0].split())))
+	return "Red: {}\nYellow: {}\nGreen: {}".format(*solution(*map(int, args)))
 
 
 if __name__ == "__main__":

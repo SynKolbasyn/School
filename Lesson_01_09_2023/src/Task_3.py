@@ -5,9 +5,9 @@ def solution(n: int) -> tuple[tuple, tuple]:
 
 
 def main(*args: str, **kwargs: str) -> str:
-	if not kwargs:
-		return "{}\n{}".format(*solution(int(args[0])))
-	return "{}\n{}".format(*solution(int(kwargs["n"])))
+	if kwargs:
+		return "{}\n{}".format(*solution(int(kwargs["n"])))
+	return "{}\n{}".format(*solution(int(args[0])))
 
 
 if __name__ == "__main__":

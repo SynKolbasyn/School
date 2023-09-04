@@ -7,11 +7,11 @@ def solution(a: int, b: int, d: int) -> int:
 
 
 def main(*args: str, **kwargs: str) -> int:
-	if not kwargs:
-		if len(args) == 1:
-			return solution(*map(int, args[0].split()))
-		return solution(*map(int, args))
-	return solution(a=int(kwargs["a"]), b=int(kwargs["b"]), d=int(kwargs["d"]))
+	if kwargs:
+		return solution(a=int(kwargs["a"]), b=int(kwargs["b"]), d=int(kwargs["d"]))
+	if len(args) == 1:
+		return solution(*map(int, args[0].split()))
+	return solution(*map(int, args))
 
 
 if __name__ == "__main__":
