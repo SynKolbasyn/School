@@ -1,4 +1,4 @@
-def solution(array: tuple[int, ...]) -> list[int]:
+def solution(array: tuple[int, ...]) -> list[int, ...]:
 	n = len(array)
 	result = []
 	for i in array:
