@@ -22,5 +22,5 @@ class Task1TestCase(unittest.TestCase):
         self.assertEqual(src.Task_1.main("-10", "5", "7", "6", "-9", "-2", "-5", "2", "3", "9"), "ARRAY: [-10, 5, 7, 6, -9, -2, -5, 2, 3, 9]\nMAX: 6\nODD COUNT: 2")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
